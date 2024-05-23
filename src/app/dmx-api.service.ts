@@ -8,7 +8,7 @@ export class DmxApiService {
 
   constructor() { }
 
-  setPattern(pattern: LightPattern) {
-    console.log("TODO: Set color pattern: " + JSON.stringify(pattern));
+  setPattern(address: number, values: number[]) {
+    console.log(`todo: set ${address} = ${JSON.stringify(values)}`);
   }
 }
