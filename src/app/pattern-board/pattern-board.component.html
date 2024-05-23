@@ -1,9 +1,14 @@
 <div class="pattern-board">
+    <div class="text-center">
+        <img src="/assets/PowerStruggle.png" alt="Power Struggle" class="inline h-16">
+    </div>
     <div *ngFor="let group of (lightPatterns.patterns$ | async | groupBy:'group')" class="mt-5">
         <h2>{{group[0].group}}</h2>
-        <div *ngFor="let pattern of group" class="pattern">
-            <div class="rounded flex-grow h-16 px-2 py-2 mx-2 my-2 cursor-pointer" [ngStyle]="{'background': pattern.color}" (click)="setPattern(pattern)">
-                {{pattern.name}} - {{pattern.color}}
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 grid-flow-row gap-4">
+            <div *ngFor="let pattern of group">
+                <div class="pattern-button" [ngStyle]="{'background': pattern.color}" (click)="setPattern(pattern)">
+                    {{pattern.name}} - {{pattern.color}}
+                </div>
             </div>
         </div>
     </div>

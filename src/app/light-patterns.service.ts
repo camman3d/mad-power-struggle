@@ -25,12 +25,16 @@ export class LightPatternsService {
   constructor() { 
     const data = localStorage.getItem(this.storageKey);
     const items = data ? JSON.parse(data) : [
+      Object.assign({name: 'White',  color: '#ffffff'}, ParCanSlots, ParCan1),
+      Object.assign({name: 'Black',  color: '#000000'}, ParCanSlots, ParCan1),
       Object.assign({name: 'Blue',   color: '#3b82f6'}, ParCanSlots, ParCan1),
       Object.assign({name: 'Green',  color: '#22c55e'}, ParCanSlots, ParCan1),
       Object.assign({name: 'Yellow', color: '#eab308'}, ParCanSlots, ParCan1),
       Object.assign({name: 'Orange', color: '#f97316'}, ParCanSlots, ParCan1),
       Object.assign({name: 'Red',    color: '#ef4444'}, ParCanSlots, ParCan1),
       Object.assign({name: 'Purple', color: '#a855f7'}, ParCanSlots, ParCan1),
+      Object.assign({name: 'White',  color: '#ffffff'}, ParCanSlots, ParCan2),
+      Object.assign({name: 'Black',  color: '#000000'}, ParCanSlots, ParCan2),
       Object.assign({name: 'Blue',   color: '#3b82f6'}, ParCanSlots, ParCan2),
       Object.assign({name: 'Green',  color: '#22c55e'}, ParCanSlots, ParCan2),
       Object.assign({name: 'Yellow', color: '#eab308'}, ParCanSlots, ParCan2),

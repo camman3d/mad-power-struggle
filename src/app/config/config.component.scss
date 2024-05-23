@@ -1,0 +1,8 @@
+
+input[type=text] {
+    @apply rounded px-4 py-2 bg-zinc-950 bg-opacity-25 border border-zinc-800 outline-none;
+    box-shadow: inset 1x 3px 5px rgba(0,0,0,0.5);
+}
+button {
+    @apply bg-green-600 hover:bg-green-500 active:bg-green-600 transition rounded px-4 py-2 text-white font-semibold;
+}

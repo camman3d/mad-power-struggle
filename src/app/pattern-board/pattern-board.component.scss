@@ -1,6 +1,8 @@
 .pattern-board {
-    @apply flex flex-wrap;
-    .pattern {
-        @apply w-1/4 inline-flex;
+    @apply px-5 py-5 rounded-lg my-10 mx-2 shadow-lg bg-gradient-to-br from-zinc-700 to-zinc-800;
+    box-shadow: 0px 30px 0px 4px theme("colors.zinc.950 / 25%");
+
+    .pattern-button {
+        @apply rounded-lg flex-grow h-32 px-2 py-2 mx-2 my-2 cursor-pointer border-4 border-zinc-600 border-opacity-50 opacity-90 hover:opacity-100 active:opacity-80 transition;
     }
 }

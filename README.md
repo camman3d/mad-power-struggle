@@ -31,6 +31,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - settings page: set ip address of esp 32
 - add pattern page
-- dashboard
 - time sequence - animate lights
 - test cases
+- edit pattern, opens a modal
+- electron app? iPad app?

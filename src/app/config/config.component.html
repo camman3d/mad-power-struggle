@@ -1,0 +1,11 @@
+<div class="mt-10">
+    <h1>Configuration</h1>
+
+    <form (ngSubmit)="save()" [formGroup]="config">
+        <div class="my-2">
+            <div>DMX Controller IP Address</div>
+            <input type="text" formControlName="ipAddress">
+        </div>
+        <button (click)="save()">Save</button>
+    </form>
+</div>
