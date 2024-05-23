@@ -1,0 +1,6 @@
+.pattern-board {
+    @apply flex flex-wrap;
+    .pattern {
+        @apply w-1/4 inline-flex;
+    }
+}

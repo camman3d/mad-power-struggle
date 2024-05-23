@@ -1,0 +1,9 @@
+<p>List of patterns</p>
+
+<div class="pattern-board">
+    <div *ngFor="let pattern of (lightPatterns.patterns$ | async)" class="pattern">
+        <div class="rounded flex-grow h-16 px-2 py-2 mx-2 my-2 cursor-pointer" [ngStyle]="{'background': pattern.color}" (click)="dmxApi.setPattern(pattern)">
+            {{pattern.name}} - {{pattern.color}}
+        </div>
+    </div>
+</div>
