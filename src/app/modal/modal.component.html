@@ -1,0 +1,11 @@
+<div class="modal" (click)="onClose()">
+    <div class="modal-body" (click)="stopProp($event)">
+        <div class="title">Title</div>
+        <a class="close" (click)="onClose()">
+            <ng-icon name="bootstrapXLg"></ng-icon>
+        </a>
+        <div class="mt-10">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

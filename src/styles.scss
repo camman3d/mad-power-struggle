@@ -15,3 +15,29 @@ h2 {
 a {
     @apply text-sky-500 hover:text-sky-400 active:text-sky-600 transition;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+button {
+    @apply bg-slate-700 hover:bg-slate-600 active:bg-green-800 transition rounded px-4 py-2 text-white font-medium text-sm uppercase tracking-wider flex items-center;
+
+    ng-icon {
+        @apply text-lg mr-2;
+    }
+
+    &.small {
+        @apply text-xs px-2 py-1;
+        ng-icon {
+            @apply text-base;
+        }
+    }
+    &.outline {
+        @apply border border-white outline-none bg-white bg-opacity-0 hover:bg-opacity-5 active:bg-opacity-15;
+    }
+    &.green {
+        @apply bg-green-600 hover:bg-green-500 active:bg-green-600;
+    }
+    &.blue {
+        @apply bg-blue-600 hover:bg-blue-500 active:bg-blue-600;
+    }
+}

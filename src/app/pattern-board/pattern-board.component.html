@@ -1,15 +1,30 @@
 <div class="pattern-board">
+    <div class="absolute top-3 right-3">
+        <span [ngClass]="editMode ? 'edit-active' : 'edit-deactive'" class="mr-2 text-sm transition">Edit Mode</span>
+        <mat-slide-toggle color="primary" [(ngModel)]="editMode"></mat-slide-toggle>
+    </div>
     <div class="text-center">
         <img src="/assets/PowerStruggle.png" alt="Power Struggle" class="inline h-16">
     </div>
     <div *ngFor="let group of (lightPatterns.patterns$ | async | groupBy:'group')" class="mt-5">
-        <h2>{{group[0].group}}</h2>
+        <h2 class="flex items-center">
+            <div>{{group[0].group}}</div>
+            <div class="flex-grow"></div>
+
+            <button class="outline small" *ngIf="editMode">
+                <ng-icon name="bootstrapPlusCircle"></ng-icon> <span>Add</span>
+            </button>
+        </h2>
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 grid-flow-row gap-4">
             <div *ngFor="let pattern of group">
-                <div class="pattern-button" [ngStyle]="{'background': pattern.color}" (click)="setPattern(pattern)">
+                <div class="pattern-button" [ngStyle]="{'background': pattern.color}" (click)="selectPattern(pattern)">
                     {{pattern.name}} - {{pattern.color}}
                 </div>
             </div>
         </div>
+        
+        <app-modal *ngIf="activePattern" [onClose]="deselect">
+            <app-pattern-form [pattern]="activePattern"></app-pattern-form>
+        </app-modal>
     </div>
 </div>
