@@ -11,7 +11,8 @@ import { NgIconComponent, provideIcons } from '@ng-icons/core';
   providers: [provideIcons({bootstrapXLg})]
 })
 export class ModalComponent implements OnInit, OnDestroy {
-  @Input() onClose!: () => void;
+  @Input({required: true}) title!: string;
+  @Input({required: true}) onClose!: () => void;
 
   stopProp(event: MouseEvent) {
     event.stopPropagation();

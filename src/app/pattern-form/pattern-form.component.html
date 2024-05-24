@@ -1,3 +1,31 @@
-<p>
-    {{pattern.name}}
-</p>
+<div class="input-group">
+    <label>Name</label>
+    <input type="text" [(ngModel)]="pattern.name">
+</div>
+<div class="input-group">
+    <label>Color</label>
+    <input type="color" [(ngModel)]="pattern.color">
+</div>
+<div class="input-group">
+    <label>Address</label>
+    <input type="number" min="1" max="512" step="1" [(ngModel)]="pattern.address">
+</div>
+<div class="input-group">
+    <label>Group</label>
+    <input type="text" [(ngModel)]="pattern.group">
+</div>
+<div class="input-group">
+    <label>Fixture Type</label>
+    <select [(ngModel)]="pattern.slots">
+        <option *ngFor="let fixture of lightPatterns.fixtureTypes" [value]="fixture.name">{{fixture.name}}</option>
+    </select>
+</div>
+
+<div class="flex space-x-2 absolute inset-x-0 bottom-0 px-5 py-5 bg-zinc-200">
+    <button class="green" (click)="save()">
+        Save
+    </button>
+    <button class="red" (click)="remove()" *ngIf="pattern.id">
+        Delete
+    </button>
+</div>

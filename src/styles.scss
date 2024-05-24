@@ -40,4 +40,23 @@ button {
     &.blue {
         @apply bg-blue-600 hover:bg-blue-500 active:bg-blue-600;
     }
+    &.red {
+        @apply bg-red-600 hover:bg-red-500 active:bg-red-600;
+    }
+}
+
+input[type=text], input[type=number], select {
+    @apply rounded px-4 py-2 bg-zinc-100 border border-zinc-500 outline-none w-64;
+    box-shadow: inset 1px 2px 4px rgba(0,0,0,0.25);
+}
+input[type=color] {
+    @apply rounded border border-zinc-500 outline-none w-64 h-10;
+}
+
+.input-group {
+    @apply my-2;
+
+    label {
+        @apply block my-1 text-sm uppercase opacity-75;
+    }
 }

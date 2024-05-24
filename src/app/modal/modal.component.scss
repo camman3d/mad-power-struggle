@@ -1,8 +1,8 @@
 .modal {
-    @apply fixed inset-0 bg-slate-900/50 backdrop-blur-sm text-slate-900;
+    @apply fixed inset-0 bg-slate-900/50 backdrop-blur-sm text-slate-900 z-10;
 
     .modal-body {
-        @apply backdrop-blur-0 bg-white absolute inset-1/2 shadow-lg rounded-lg px-5 py-5;
+        @apply backdrop-blur-0 bg-white absolute inset-1/2 shadow-lg rounded-lg px-5 py-5 overflow-hidden;
         transform: translate(-50%, -50%);
         max-height: 600px;
         height: 90vh;
@@ -14,6 +14,9 @@
         }
         .close {
             @apply text-slate-900 absolute top-5 right-5 cursor-pointer text-xl hover:text-slate-600 transition;
+        }
+        .content {
+            @apply absolute inset-x-0 bottom-0 top-16 overflow-y-auto px-5;
         }
     }
 }

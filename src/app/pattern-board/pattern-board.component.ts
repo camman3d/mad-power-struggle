@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { LightPattern, LightPatternsService } from '../light-patterns.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { EmptyLightPattern, LightPattern, LightPatternsService } from '../light-patterns.service';
 import { CommonModule, NgFor } from '@angular/common';
 import { DmxApiService } from '../dmx-api.service';
 import { GroupByPipe } from '../group-by.pipe';
@@ -21,7 +21,7 @@ import { PatternFormComponent } from '../pattern-form/pattern-form.component';
 export class PatternBoardComponent {
   editMode = false;
   activePattern: LightPattern | undefined;
-
+  
   constructor(public lightPatterns: LightPatternsService, private dmxApi: DmxApiService) {}
 
   selectPattern(pattern: LightPattern) {
@@ -36,4 +36,8 @@ export class PatternBoardComponent {
   deselect = () => {
     this.activePattern = undefined;
   };
+
+  add() {
+    this.activePattern = EmptyLightPattern;
+  }
 }
