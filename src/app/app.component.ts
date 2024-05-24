@@ -11,5 +11,5 @@ import { PatternBoardComponent } from './pattern-board/pattern-board.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'mad-power-struggle-2';
+  title = 'mad-power-struggle';
 }
