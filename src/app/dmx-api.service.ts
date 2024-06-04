@@ -9,7 +9,7 @@ export class DmxApiService {
     let params = new URLSearchParams();
     for (let i = 0; i < values.length; i++)
       params.append(String(channel + i), String(values[i]));
-    let url = 'http://' + String(params);
+    let url = 'http://' + ipAddress + '/setDMX?' + String(params);
 
     fetch(url, {
       method: 'POST',

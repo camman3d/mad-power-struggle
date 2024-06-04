@@ -1,38 +1,32 @@
 # Mad Power Struggle
 
-> Every mad scientist needs ominous lights.
-> - Everybody
+Lose your sanity all over again.
 
-Add dmx-controlled lights to your secret lair. Control the lights with cheap hardware (any respectible mad scientist keep their world-domination budget under control).
+Add dmx-controlled lights to your secret lair. Control the lights with cheap hardware (any respectible mad scientist keeps their world-domination budget under control).
 
-Manage your lights from a web-based dashboard, similar to (but more free-er) a stream deck. Configure colors
+Manage your lights from a dashboard, similar to (but more free-er) a stream deck. Configure different fixture types, lights, and colors to your villainous liking.
 
-## Setting everything up
+For more information setting up the lights and the controller, see:
 
-### Step 1: Build the DMX light controller
+- https://mischief-tech.com/lair-lights - Full instructions
+- https://lair-lights.mischief-tech.com - Hosted version of Mad Power Struggle
+- https://github.com/camman3d/lair-lights-controller - Microcontroller code for the light controller
 
-See https://mischief-tech.com/lights for instructions on building a lights controller and hooking it up to this. Don't worry: parts are cheap and instructions are simple.
 
-Code is in the `dmx-controller` folder.
-
-### Step 2: Run web app
-
-Install and run the Angular app:
+## Running Locally
 
 ```
 npm install
-ng serve
+npm run dev
 ```
 
-### Step 3: Configure lights
+Then open a browser to `http://localhost:4200`
 
-First, update the code for your lights (*todo: Make this part easier*)
+## Building Desktop Application
 
-Second, click on config and enter the IP address of the ESP32. Click Save.
+```
+npm run build-make
+npm run make
+```
 
-If you want to edit or otherwise modify your light colors you can. Turn on the edit mode toggle in the top right corner. Click a color to edit.
-
-## Running everything
-
-* Click on a color to apply it
-* 
+When finished, the resulting binary will be under `out/make/...` (path varies by platform).
