@@ -13,7 +13,7 @@ See https://mischief-tech.com/lair-lights for full guide.
 Manage your lights from a dashboard, similar to (but more free-er) a stream deck. Configure different fixture types, lights, and colors to your villainous liking. See also:
 
 - Desktop version available in [Releases](https://github.com/camman3d/mad-power-struggle/releases)
-- https://lair-lights.mischief-tech.com - Hosted version of Mad Power Struggle
+- https://power.mischief-tech.com - Hosted version of Mad Power Struggle
 - https://github.com/camman3d/lair-lights-controller - Microcontroller code for the light controller
 
 
