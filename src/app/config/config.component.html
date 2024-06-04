@@ -1,13 +1,56 @@
-<div class="mt-10">
+<div class="my-10">
     <h1 class="mb-5">Configuration</h1>
 
-    <form (ngSubmit)="save()" [formGroup]="config">
-        <div class="input-group">
-            <label>DMX Controller IP Address</label>
-            <input type="text" formControlName="ipAddress">
+    <div class="input-group">
+        <label>DMX Controller IP Address</label>
+        <input class="dark" type="text" [(ngModel)]="ipAddress">
+    </div>
+
+    <h2 class="mt-8 mb-2">Light Definitions</h2>
+    <p>Define the different types of light fixtures you have. You will likely need to reference their manual to identify how many channels it has and the role of each channel.</p>
+    <p>For channels, specify <code>red</code> or <code>green</code> or <code>blue</code> to identify color channels. For all other channels enter a value (0-255) that it will be set to.</p>
+
+    <div class="my-5 italic" *ngIf="definitions.length == 0">No definitions</div>
+    @for (definition of definitions; track definition) {
+        <div class="my-5 relative">
+            <app-light-def-form [definition]="definition" (defChanged)="updateDefinition($index, $event)"></app-light-def-form>
+            <div class="absolute top-3 right-3">
+                <button (click)="removeDefinition($index)">Delete</button>
+            </div>
         </div>
-        <div class="mt-5">
-            <button (click)="save()">Save</button>
+    }
+    <div class="mt-5">
+        <button (click)="addDefinition()">Add Definition</button>
+    </div>
+
+    <h2 class="mt-8 mb-2">Lights</h2>
+    <p>List out what lights you have connected and on which address.</p>
+
+    <div class="my-5 italic" *ngIf="lights.length == 0">No lights</div>
+    @for (light of lights; track light) {
+        <div class="my-5 relative">
+            <app-light-form [light]="light" [definitions]="definitions" (lightChanged)="updateLight($index, $event)"></app-light-form>
+            <div class="absolute top-3 right-3">
+                <button (click)="removeLight($index)">Delete</button>
+            </div>
         </div>
-    </form>
+    }
+    <div class="mt-5">
+        <button (click)="addLight()" [disabled]="definitions.length == 0">Add Light</button>
+    </div>
+
+    <h2 class="mt-8 mb-2">Colors</h2>
+    <div class="my-5 italic" *ngIf="colors.length == 0">No colors</div>
+    @for (color of colors; track $index) {
+        <div class="my-5 flex space-x-3 items-center">
+            <input type="text" class="dark" [(ngModel)]="colors[$index].name" (ngModelChange)="updateColors()">
+            <input type="color" [(ngModel)]="colors[$index].hex" (ngModelChange)="updateColors()">
+            <button (click)="moveColor($index, -1)"><ng-icon name="bootstrapArrowUp"></ng-icon></button>
+            <button (click)="moveColor($index, 1)"><ng-icon name="bootstrapArrowDown"></ng-icon></button>
+            <button (click)="removeColor($index)">Delete</button>
+        </div>
+    }
+    <div class="mt-5">
+        <button (click)="addColor()">Add Color</button>
+    </div>
 </div>

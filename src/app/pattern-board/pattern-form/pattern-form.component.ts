@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { EmptyLightPattern, LightPattern, LightPatternsService } from '../light-patterns.service';
+import { EmptyLightPattern, LightPattern, LightPatternsService } from '../../light-patterns.service';
 import { FormsModule } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
 

@@ -1,0 +1,18 @@
+<div class="border border-gray-700 bg-gray-900 px-5 py-5 rounded">
+    <div class="input-group">
+        <label>Light Name</label>
+        <input class="dark" type="text" [(ngModel)]="name" (ngModelChange)="updateLight()">
+    </div>
+    <div class="input-group">
+        <label>Definition</label>
+        <select [(ngModel)]="definitionIndex" class="dark" (ngModelChange)="updateLight()">
+            @for (def of definitions; track $index) {
+                <option [value]="$index">{{def.name}}</option>
+            }
+        </select>
+    </div>
+    <div class="input-group">
+        <label>Address</label>
+        <input class="dark" type="number" min="1" max="512" step="1" [(ngModel)]="address" (ngModelChange)="updateLight()">
+    </div>
+</div>

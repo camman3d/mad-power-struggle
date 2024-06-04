@@ -1,0 +1,18 @@
+<div class="border border-gray-700 bg-gray-900 px-5 py-5 rounded">
+    <div class="input-group">
+        <label>Definition Name</label>
+        <input class="dark" type="text" [(ngModel)]="name">
+    </div>
+    <div class="input-group">
+        <label>Channels</label>
+        @if (channels.length == 0) {<div class="my-3 italic">No channels defined</div>}
+        @for (channel of channels; track $index) {
+            <div class="my-2 flex items-center space-x-3">
+                <div class="text-sm text-gray-500 bg-gray-700 rounded-full px-2 py-1">{{$index}}</div>
+                <input class="dark" type="text" [(ngModel)]="channels[$index]" (ngModelChange)="saveChannels()">
+                <button (click)="removeChannel($index)">Remove</button>
+            </div>
+        }
+        <button (click)="addChannel()"><ng-icon name="bootstrapPlus"></ng-icon> Add Channel</button>
+    </div>
+</div>
