@@ -1,5 +1,7 @@
 # Mad Power Struggle
 
+![](docs/PowerStruggle.jpg)
+
 Lose your sanity all over again.
 
 Add dmx-controlled lights to your secret lair. Control the lights with cheap hardware (any respectible mad scientist keeps their world-domination budget under control).
@@ -9,6 +11,7 @@ Manage your lights from a dashboard, similar to (but more free-er) a stream deck
 For more information setting up the lights and the controller, see:
 
 - https://mischief-tech.com/lair-lights - Full instructions
+- Desktop version available in [Releases](https://github.com/camman3d/mad-power-struggle/releases)
 - https://lair-lights.mischief-tech.com - Hosted version of Mad Power Struggle
 - https://github.com/camman3d/lair-lights-controller - Microcontroller code for the light controller
 
