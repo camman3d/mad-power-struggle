@@ -11,10 +11,6 @@ export class DmxApiService {
       params.append(String(channel + i), String(values[i]));
     let url = 'http://' + ipAddress + '/setDMX?' + String(params);
 
-    fetch(url, {
-      method: 'POST',
-      mode: 'no-cors',
-      body: '',
-    });
+    fetch(url, {method: 'GET', mode: 'no-cors'});
   }
 }
