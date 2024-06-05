@@ -12,8 +12,9 @@ See https://mischief-tech.com/lair-lights for full guide.
 
 Manage your lights from a dashboard, similar to (but more free-er) a stream deck. Configure different fixture types, lights, and colors to your villainous liking. See also:
 
+- Hosted browser version at https://power.mischief-tech.com
 - Desktop version available in [Releases](https://github.com/camman3d/mad-power-struggle/releases)
-- https://github.com/camman3d/lair-lights-controller - Microcontroller code for the light controller
+- https://github.com/camman3d/lair-lights-dmx - Microcontroller code for the light controller
 
 > Please note: wherever you run this app, the device must be on the same network as the controller.
 

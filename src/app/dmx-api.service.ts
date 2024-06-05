@@ -11,6 +11,14 @@ export class DmxApiService {
       params.append(String(channel + i), String(values[i]));
     let url = 'http://' + ipAddress + '/setDMX?' + String(params);
 
-    fetch(url, {method: 'GET', mode: 'no-cors'});
+    if (window.location.protocol === 'https:') {
+      // We can't do http requests from https (mixed content blocking)
+      // So instead we'll load as passive content, such as an img
+      // See: https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content
+      let img = document.createElement('img');
+      img.src = url;
+    } else {
+      fetch(url, {method: 'GET', mode: 'no-cors'});
+    }
   }
 }
